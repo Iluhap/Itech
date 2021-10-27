@@ -16,6 +16,7 @@ input:checked~.tab-content {
   box-shadow: 2px 2px #83838323;
   border-radius: 5px;
   position: relative;
+  margin: auto;
 }
 
 .accordion-tab {
