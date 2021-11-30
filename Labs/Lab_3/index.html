@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Main</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        function generateData() {
+            var data = ""
+            var size = 10
+
+            for (var i = 0; i < size; i++) {
+                data += String.fromCharCode(Math.floor((Math.random() * 25) + 97))
+            }
+            return data
+        }
+
+        function createTableRow() {
+            var td = document.createElement("td")
+            td.innerText = generateData()
+
+            var table_row = document.createElement("tr")
+            table_row.appendChild(td)
+            return table_row
+        }
+
+        function startGen() {
+            var period = document.getElementById("period").value
+            var table = document.getElementById("my_table")
+
+            setInterval(function () { table.appendChild(createTableRow()) }, period * 1000)
+        }
+    </script>
+
+</head>
+
+<body>
+
+    <input type='button' value='Начать генерацию' onclick='startGen()' />
+    <input id="period" type='number' value="1" />
+
+    <table id="my_table">
+        <tr>
+            <th>Data</th>
+        </tr>
+    </table>
+
+</body>
+
+</html>
